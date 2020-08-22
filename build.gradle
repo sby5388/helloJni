@@ -46,7 +46,7 @@ android {
 
     sourceSets {
         main {
-            manifest.srcFile "AndroidManifest2.xml"
+            manifest.srcFile "AndroidManifest.xml"
             java.srcDirs = ['src']
             res.srcDirs = ["res"]
             jni.srcDirs = ["jni"]
