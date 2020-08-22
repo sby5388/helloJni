@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.hellojni">
+    <!--  TODO 该文件只是让ndk-build编译时使用到 android:minSdkVersion="16"  -->
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="26"
+        tools:ignore="GradleOverrides,OldTargetApi" />
+    
+
+</manifest>

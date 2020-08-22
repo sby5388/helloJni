@@ -1,0 +1,75 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.3'
+
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+        jcenter()
+
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+
+    defaultConfig {
+        applicationId "com.example.hellojni"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile "AndroidManifest2.xml"
+            java.srcDirs = ['src']
+            res.srcDirs = ["res"]
+            jni.srcDirs = ["jni"]
+            //todo 打包时加载进相应的so
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:support-v4:26.1.0"
+    implementation "com.android.support:appcompat-v7:26.1.0"
+//    implementation "com.android.supportv7:26.1.0"
+
+    testImplementation 'junit:junit:4.12'
+}
